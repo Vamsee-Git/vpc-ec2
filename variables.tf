@@ -9,3 +9,8 @@ variable "ami_id" {
   type        = string
   default     = "ami-0e35ddab05955cf57"
 }
+
+variable "instance_type" {
+  description = "Instance type "
+  type        = string
+}
