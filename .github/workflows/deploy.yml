@@ -18,7 +18,6 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::664418994073:role/oidc-github-newrole
           aws-region: ap-south-1
-          id-token: true
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v1
