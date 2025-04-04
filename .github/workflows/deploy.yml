@@ -55,7 +55,9 @@ jobs:
 
       - name: Run Checkov
         run: checkov -d .
-      
+
+      - name: Terraform plan
+        run: terraform plan 
 
       - name: Terraform apply
         run: terraform apply -auto-approve
