@@ -31,9 +31,21 @@ jobs:
 
       - name: Terraform validate
         run: terraform validate
+        
+      - name: Setup TFLint
+        uses: terraform-linters/setup-tflint@v1
+        with:
+          tflint_version: latest
+
+      - name: Initialize TFLint
+        run: tflint --init
+
+      - name: Run TFLint
+        run: tflint --format compact
 
       - name: Terraform plan
         run: terraform plan 
+      
 
       - name: Terraform apply
         run: terraform apply -auto-approve
