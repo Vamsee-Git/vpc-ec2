@@ -99,6 +99,6 @@ jobs:
       # Step 12: Apply Terraform Changes on PR Merge
       - name: Applying Terraform after PR Merge
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: 
+        run: |
           terraform init
           terraform apply -auto-approve 
