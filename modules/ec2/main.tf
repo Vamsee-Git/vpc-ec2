@@ -10,6 +10,15 @@ resource "aws_instance" "main" {
     volume_type = "gp2"
   }
 
+  user_data = <<-EOF
+              #!/bin/bash
+              sudo apt-get update
+              sudo apt-get install -y docker.io
+              sudo systemctl start docker
+              sudo systemctl enable docker
+              sudo docker run -d -p 8080:80   -e OPENPROJECT_SECRET_KEY_BASE=secret   -e OPENPROJECT_HTTPS=false   openproject/openproject:15
+              EOF
+
   tags = {
     Name = "main-instance"
   }
