@@ -8,6 +8,11 @@ variable "instance_type" {
   type        = string
 }
 
+variable "subnet_id" {
+  description = "The ID of the subnet to launch the instance in"
+  type        = string
+}
+
 variable "key_name" {
   description = "The name of the SSH key pair"
   type        = string
@@ -18,9 +23,8 @@ variable "security_group_id" {
   type        = string
 }
 
-
-variable "subnet_id" {
-  description = "The ID of the subnet to launch the instance in"
-  type        = string
+variable "root_volume_size" {
+  description = "The size of the root volume in GB"
+  type        = number
+  default     = 8
 }
-
