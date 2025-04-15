@@ -19,7 +19,6 @@ resource "aws_instance" "main" {
               sudo apt-get update -y
               sudo apt-get install -y docker-ce
               sudo systemctl start docker
-              sudo usermod -aG docker ${USER}
               sudo systemctl enable docker
               sudo docker run -d -p 8080:80 -e OPENPROJECT_SECRET_KEY_BASE=secret -e OPENPROJECT_HTTPS=false openproject/openproject:15
               EOF
