@@ -25,25 +25,25 @@ resource "aws_security_group" "main" {
   }
 }
 
-resource "aws_security_group" "alb_sg" {
-  vpc_id = var.vpc_id
+ resource "aws_security_group" "alb_sg" {
+   vpc_id = var.vpc_id
 
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-  tags = {
-    Name = "alb-sg"
-  }
+   ingress {
+     from_port   = 80
+     to_port     = 80
+     protocol    = "tcp"
+     cidr_blocks = ["0.0.0.0/0"]
+   }
+
+   egress {
+     from_port   = 0
+     to_port     = 0
+     protocol    = "-1"
+     cidr_blocks = ["0.0.0.0/0"]
+   }
 }
+
+
 
 output "web_security_group_id" {
   value = aws_security_group.main.id
