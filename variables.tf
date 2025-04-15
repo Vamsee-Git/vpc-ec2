@@ -7,11 +7,11 @@ variable "key_name" {
 variable "ami_id" {
   description = "The AMI ID to use for the EC2 instance"
   type        = string
-  default     = "ami-0e35ddab05955cf57"
+  default     = "ami-020fbc00dbecba358"
 }
 
 variable "instance_type" {
   description = "Instance type "
   type        = string
-  default     = "t2.micro"
+  default     = "t3.medium"
 }
