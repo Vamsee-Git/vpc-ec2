@@ -45,7 +45,7 @@ resource "aws_lb_listener" "http" {
 resource "aws_lb_target_group_attachment" "openproject" {
   target_group_arn = aws_lb_target_group.openproject_tg.arn
   target_id        = var.instance_id
-  port             = 80
+  port             = 8080
 }
 
 output "alb_dns_name" {
