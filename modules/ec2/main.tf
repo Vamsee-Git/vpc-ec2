@@ -4,6 +4,11 @@ resource "aws_instance" "main" {
   subnet_id     = var.subnet_id
   key_name      = var.key_name
   vpc_security_group_ids = [var.security_group_id]
+  
+  root_block_device {
+    volume_size = 15
+    volume_type = "gp2"
+  }
 
   tags = {
     Name = "main-instance"
