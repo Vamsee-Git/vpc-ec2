@@ -2,7 +2,7 @@ resource "aws_lb" "openproject_alb" {
   name               = "openproject-alb"
   internal           = false
   load_balancer_type = "application"
-  security_groups    = [var.security_group_id]
+  security_groups    = [var.alb_security_group_id]
   subnets            = var.subnet_ids
 
   enable_deletion_protection = false
