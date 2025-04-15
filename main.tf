@@ -29,3 +29,13 @@ module "ec2" {
   ami_id              = var.ami_id
   instance_type       = var.instance_type
 }
+
+
+module "alb" {
+  source           = "./modules/alb"
+  vpc_id           = module.vpc.vpc_id
+  subnet_ids       = module.vpc.subnet_id
+  security_group_id = module.security_group.lb_security_group_id
+  instance_id      = module.ec2.instance_id
+}
+
