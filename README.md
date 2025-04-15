@@ -15,6 +15,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
+| <a name="module_alb"></a> [alb](#module\_alb) | ./modules/alb | n/a |
 | <a name="module_ec2"></a> [ec2](#module\_ec2) | ./modules/ec2 | n/a |
 | <a name="module_security_group"></a> [security\_group](#module\_security\_group) | ./modules/security_group | n/a |
 | <a name="module_vpc"></a> [vpc](#module\_vpc) | ./modules/vpc | n/a |
