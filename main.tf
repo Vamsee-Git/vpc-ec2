@@ -32,10 +32,11 @@ module "ec2" {
 
 
 module "alb" {
-  source           = "./modules/alb"
-  vpc_id           = module.vpc.vpc_id
-  subnet_ids       = module.vpc.subnet_id
-  security_group_id = module.security_group.lb_security_group_id
-  instance_id      = module.ec2.instance_id
+  source             = "./modules/alb"
+  vpc_id             = module.vpc.vpc_id
+  subnet_ids         = module.vpc.subnet_ids
+  alb_security_group_id = module.security_group.lb_security_group_id
+  instance_id        = module.ec2.instance_id
 }
+
 
