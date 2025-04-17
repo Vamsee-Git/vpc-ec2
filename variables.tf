@@ -13,5 +13,5 @@ variable "ami_id" {
 variable "instance_type" {
   description = "Instance type"
   type        = string
-  default     = "t2.medium"
+  default     = "t3.medium"
 }
