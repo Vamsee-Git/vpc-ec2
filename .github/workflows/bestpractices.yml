@@ -10,7 +10,6 @@ on:
 
 env:
   AWS_REGION: us-east-1
-  AWS_ACCOUNT_ID: 273354635930
 
 jobs:
   terraform-deploy:
@@ -27,7 +26,7 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          role-to-assume: arn:aws:iam::273354635930:role/github-oidc
+          role-to-assume: arn:aws:iam::877786395093:role/github-oidc-vamsee
           aws-region: us-east-1
 
       - name: Setup Terraform
